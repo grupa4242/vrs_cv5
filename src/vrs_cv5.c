@@ -71,6 +71,8 @@ void uart_init()
 	USART_Init(USART1, &conf);
 
 	USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);
+	USART_ITConfig(USART1, USART_IT_TC, ENABLE);
+
 	USART_Cmd(USART1, ENABLE);
 }
 

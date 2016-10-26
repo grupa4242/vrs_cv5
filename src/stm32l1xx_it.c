@@ -24,6 +24,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32l1xx_it.h"
 #include "vrs_cv5.h"
+#include "ringbuffer.h"
 /* #include "main.h" */
 
 /** @addtogroup Template_Project
@@ -170,8 +171,18 @@ void ADC1_IRQHandler(void)
 
 void USART1_IRQHandler(void)
 {
-	if (USART_ReceiveData(USART1) == 'm')
-		printmode = !printmode;
+	if (USART1 -> SR & USART_SR_RXNE)
+		if (USART_ReceiveData(USART1) == 'm')
+				printmode = !printmode;
+
+	if (USART1 -> SR & USART_SR_TC)
+		{
+			if (getfull())
+				USART_SendData(USART1, getbuff());
+			else
+				USART1 -> SR &= ~USART_SR_TC;
+		}
+
 }
 
 /**

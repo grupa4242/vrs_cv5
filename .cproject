@@ -18,7 +18,7 @@
 							<option id="com.atollic.truestudio.toolchain_options.mcu.1555806737" name="Microcontroller" superClass="com.atollic.truestudio.toolchain_options.mcu" value="STM32L152RE" valueType="string"/>
 							<option id="com.atollic.truestudio.toolchain_options.vendor.899418813" name="Vendor name" superClass="com.atollic.truestudio.toolchain_options.vendor" value="STMicroelectronics" valueType="string"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.atollic.truestudio.exe.debug.toolchain.platform.1591044404" isAbstract="false" name="Debug platform" superClass="com.atollic.truestudio.exe.debug.toolchain.platform"/>
-							<builder buildPath="${workspace_loc:/vrs_cv5}/Debug" id="com.atollic.truestudio.mbs.builder1.586830524" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="com.atollic.truestudio.mbs.builder1"/>
+							<builder buildPath="${workspace_loc:/vrs_cv5}/Debug" customBuilderProperties="toolChainpathString=C:/Program Files (x86)/Atollic/TrueSTUDIO for ARM 6.0.0/ARMTools/bin|com.atollic.truestudio.common_options.target.mcu=STM32L152RE|toolChainpathType=1|com.atollic.truestudio.common_options.target.vendor=STMicroelectronics|" id="com.atollic.truestudio.mbs.builder1.586830524" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="com.atollic.truestudio.mbs.builder1"/>
 							<tool id="com.atollic.truestudio.exe.debug.toolchain.as.1207213763" name="Assembler" superClass="com.atollic.truestudio.exe.debug.toolchain.as">
 								<option id="com.atollic.truestudio.common_options.target.endianess.483872480" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
 								<option id="com.atollic.truestudio.common_options.target.mcpu.1452326640" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32L152RE" valueType="enumerated"/>
@@ -27,6 +27,7 @@
 								<option id="com.atollic.truestudio.common_options.target.fpu.774092480" name="Floating point" superClass="com.atollic.truestudio.common_options.target.fpu"/>
 								<option id="com.atollic.truestudio.as.symbols.defined.538144803" name="Defined symbols" superClass="com.atollic.truestudio.as.symbols.defined"/>
 								<option id="com.atollic.truestudio.as.general.incpath.1546682156" name="Include path" superClass="com.atollic.truestudio.as.general.incpath"/>
+								<option id="com.atollic.truestudio.common_options.target.interwork.970287998" superClass="com.atollic.truestudio.common_options.target.interwork"/>
 								<inputType id="com.atollic.truestudio.as.input.1265088375" name="Input" superClass="com.atollic.truestudio.as.input"/>
 							</tool>
 							<tool id="com.atollic.truestudio.exe.debug.toolchain.gcc.559218627" name="C Compiler" superClass="com.atollic.truestudio.exe.debug.toolchain.gcc">
@@ -59,6 +60,7 @@
 								<option id="com.atollic.truestudio.ld.general.clib.454820769" name="Runtime Library" superClass="com.atollic.truestudio.ld.general.clib"/>
 								<option id="com.atollic.truestudio.ld.general.scriptfile.1682419423" name="Linker script" superClass="com.atollic.truestudio.ld.general.scriptfile" value="..\stm32_flash.ld" valueType="string"/>
 								<option id="com.atollic.truestudio.ld.optimization.do_garbage.1305668507" name="Dead code removal " superClass="com.atollic.truestudio.ld.optimization.do_garbage" value="true" valueType="boolean"/>
+								<option id="com.atollic.truestudio.common_options.target.interwork.888913561" superClass="com.atollic.truestudio.common_options.target.interwork"/>
 								<inputType id="com.atollic.truestudio.ld.input.568604488" name="Input" superClass="com.atollic.truestudio.ld.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -84,6 +86,7 @@
 								<option id="com.atollic.truestudio.gpp.optimization.prep_data.1530707192" name="Prepare dead data removal" superClass="com.atollic.truestudio.gpp.optimization.prep_data" value="true" valueType="boolean"/>
 								<option id="com.atollic.truestudio.gpp.optimization.fno_rtti.1693758470" name="Disable RTTI" superClass="com.atollic.truestudio.gpp.optimization.fno_rtti"/>
 								<option id="com.atollic.truestudio.gpp.optimization.fno_exceptions.1440768545" name="Disable exception handling" superClass="com.atollic.truestudio.gpp.optimization.fno_exceptions"/>
+								<option id="com.atollic.truestudio.common_options.target.interwork.503761894" superClass="com.atollic.truestudio.common_options.target.interwork"/>
 							</tool>
 							<tool id="com.atollic.truestudio.exe.debug.toolchain.ldcc.1515634367" name="C++ Linker" superClass="com.atollic.truestudio.exe.debug.toolchain.ldcc">
 								<option id="com.atollic.truestudio.common_options.target.endianess.1157130710" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
@@ -94,6 +97,7 @@
 								<option id="com.atollic.truestudio.ld.general.cclib.30877706" name="Runtime Library" superClass="com.atollic.truestudio.ld.general.cclib"/>
 								<option id="com.atollic.truestudio.ldcc.optimization.do_garbage.1964745452" name="Dead code removal" superClass="com.atollic.truestudio.ldcc.optimization.do_garbage" value="true" valueType="boolean"/>
 								<option id="com.atollic.truestudio.ldcc.general.scriptfile.1114380640" name="Linker script" superClass="com.atollic.truestudio.ldcc.general.scriptfile" value="..\stm32_flash.ld" valueType="string"/>
+								<option id="com.atollic.truestudio.common_options.target.interwork.216086565" superClass="com.atollic.truestudio.common_options.target.interwork"/>
 							</tool>
 							<tool id="com.atollic.truestudio.ar.base.51797814" name="Archiver" superClass="com.atollic.truestudio.ar.base"/>
 							<tool id="com.atollic.truestudio.exe.debug.toolchain.secoutput.772241667" name="Other" superClass="com.atollic.truestudio.exe.debug.toolchain.secoutput"/>
@@ -124,7 +128,7 @@
 							<option id="com.atollic.truestudio.toolchain_options.mcu.1944917933" name="Microcontroller" superClass="com.atollic.truestudio.toolchain_options.mcu" value="STM32L152RE" valueType="string"/>
 							<option id="com.atollic.truestudio.toolchain_options.vendor.717778649" name="Vendor name" superClass="com.atollic.truestudio.toolchain_options.vendor" value="STMicroelectronics" valueType="string"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.atollic.truestudio.exe.release.toolchain.platform.15935006" isAbstract="false" name="release platform" superClass="com.atollic.truestudio.exe.release.toolchain.platform"/>
-							<builder buildPath="${workspace_loc:/vrs_cv5}/Release" id="com.atollic.truestudio.mbs.builder1.1666911258" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="com.atollic.truestudio.mbs.builder1"/>
+							<builder buildPath="${workspace_loc:/vrs_cv5}/Release" customBuilderProperties="com.atollic.truestudio.common_options.target.mcu=STM32L152RE|com.atollic.truestudio.common_options.target.vendor=STMicroelectronics|" id="com.atollic.truestudio.mbs.builder1.1666911258" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="com.atollic.truestudio.mbs.builder1"/>
 							<tool id="com.atollic.truestudio.exe.release.toolchain.as.53802933" name="Assembler" superClass="com.atollic.truestudio.exe.release.toolchain.as">
 								<option id="com.atollic.truestudio.common_options.target.endianess.649304086" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
 								<option id="com.atollic.truestudio.common_options.target.mcpu.363020157" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32L152RE" valueType="enumerated"/>
@@ -133,6 +137,7 @@
 								<option id="com.atollic.truestudio.common_options.target.fpu.1821603223" name="Floating point" superClass="com.atollic.truestudio.common_options.target.fpu"/>
 								<option id="com.atollic.truestudio.as.symbols.defined.1944537156" name="Defined symbols" superClass="com.atollic.truestudio.as.symbols.defined"/>
 								<option id="com.atollic.truestudio.as.general.incpath.1755122288" name="Include path" superClass="com.atollic.truestudio.as.general.incpath"/>
+								<option id="com.atollic.truestudio.common_options.target.interwork.1317868818" superClass="com.atollic.truestudio.common_options.target.interwork"/>
 								<inputType id="com.atollic.truestudio.as.input.1349916731" name="Input" superClass="com.atollic.truestudio.as.input"/>
 							</tool>
 							<tool id="com.atollic.truestudio.exe.release.toolchain.gcc.1924582898" name="C Compiler" superClass="com.atollic.truestudio.exe.release.toolchain.gcc">
@@ -165,6 +170,7 @@
 								<option id="com.atollic.truestudio.ld.general.clib.895130753" name="Runtime Library" superClass="com.atollic.truestudio.ld.general.clib"/>
 								<option id="com.atollic.truestudio.ld.general.scriptfile.1199043441" name="Linker script" superClass="com.atollic.truestudio.ld.general.scriptfile" value="..\stm32_flash.ld" valueType="string"/>
 								<option id="com.atollic.truestudio.ld.optimization.do_garbage.1845798103" name="Dead code removal " superClass="com.atollic.truestudio.ld.optimization.do_garbage" value="true" valueType="boolean"/>
+								<option id="com.atollic.truestudio.common_options.target.interwork.1960404279" superClass="com.atollic.truestudio.common_options.target.interwork"/>
 								<inputType id="com.atollic.truestudio.ld.input.554435301" name="Input" superClass="com.atollic.truestudio.ld.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -190,6 +196,7 @@
 								<option id="com.atollic.truestudio.gpp.optimization.prep_data.1497409622" name="Prepare dead data removal" superClass="com.atollic.truestudio.gpp.optimization.prep_data" value="true" valueType="boolean"/>
 								<option id="com.atollic.truestudio.gpp.optimization.fno_rtti.1574779111" name="Disable RTTI" superClass="com.atollic.truestudio.gpp.optimization.fno_rtti"/>
 								<option id="com.atollic.truestudio.gpp.optimization.fno_exceptions.2139377782" name="Disable exception handling" superClass="com.atollic.truestudio.gpp.optimization.fno_exceptions"/>
+								<option id="com.atollic.truestudio.common_options.target.interwork.1403330353" superClass="com.atollic.truestudio.common_options.target.interwork"/>
 							</tool>
 							<tool id="com.atollic.truestudio.exe.release.toolchain.ldcc.1965205855" name="C++ Linker" superClass="com.atollic.truestudio.exe.release.toolchain.ldcc">
 								<option id="com.atollic.truestudio.common_options.target.endianess.1874108596" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
@@ -200,6 +207,7 @@
 								<option id="com.atollic.truestudio.ld.general.cclib.990021071" name="Runtime Library" superClass="com.atollic.truestudio.ld.general.cclib"/>
 								<option id="com.atollic.truestudio.ldcc.optimization.do_garbage.750105517" name="Dead code removal" superClass="com.atollic.truestudio.ldcc.optimization.do_garbage" value="true" valueType="boolean"/>
 								<option id="com.atollic.truestudio.ldcc.general.scriptfile.1116327446" name="Linker script" superClass="com.atollic.truestudio.ldcc.general.scriptfile" value="..\stm32_flash.ld" valueType="string"/>
+								<option id="com.atollic.truestudio.common_options.target.interwork.249885148" superClass="com.atollic.truestudio.common_options.target.interwork"/>
 							</tool>
 							<tool id="com.atollic.truestudio.ar.base.224238402" name="Archiver" superClass="com.atollic.truestudio.ar.base"/>
 							<tool id="com.atollic.truestudio.exe.release.toolchain.secoutput.2136193542" name="Other" superClass="com.atollic.truestudio.exe.release.toolchain.secoutput"/>
@@ -221,4 +229,5 @@
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope"/>
 </cproject>

@@ -30,6 +30,7 @@ SOFTWARE.
 #include <stddef.h>
 #include "stm32l1xx.h"
 #include "vrs_cv5.h"
+#include "ringbuffer.h"
 #include <stdio.h>
 
 
@@ -78,13 +79,13 @@ int main(void)
 	uart_init();
 	gpio_init();
 	adc_init();
-	USART_SendData(USART1, '\n');
+	//USART_SendData(USART1, '\n');
   /* Infinite loop */
 	char buff[10];
 	uint16_t i=10;
   while (1)
   {
-  		if (i>=10)
+  		if (getfull())
   			{
 					if (printmode)
 						{
@@ -98,25 +99,14 @@ int main(void)
 						}
 					else
 						sprintf(buff, "%d\n\r", adc_conv_val);
-
-					i=0;
+					for (i = 0; i < 10; i++)
+						{
+							if (buff[i] == '0')
+								break;
+							putbuff(buff[i]);
+						}
+					USART_SendData(USART1, 'n');
 				}
-
-
-  		if (USART1->SR & USART_FLAG_TC)
-  			{
-  				if (i<10)
-  					{
-
-  						USART_SendData(USART1, buff[i]);
-  						if (buff[i]==0)
-  							{
-  								i=10;
-  							}
-  						else
-  							i++;
-  					}
-  			}
   }
   return 0;
 }
