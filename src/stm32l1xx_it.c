@@ -175,12 +175,13 @@ void USART1_IRQHandler(void)
 		if (USART_ReceiveData(USART1) == 'm')
 				printmode = !printmode;
 
-	if (USART1 -> SR & USART_SR_TC)
+	if (USART1 -> SR & USART_SR_TXE)
 		{
-			if (getfull())
-				USART_SendData(USART1, getbuff());
-			else
-				USART1 -> SR &= ~USART_SR_TC;
+			if (getfull() < 2)
+				USART_ITConfig(USART1, USART_IT_TXE, DISABLE);
+			USART_SendData(USART1, getbuff());
+			//else
+				//USART1 -> SR &= ~USART_SR_TC;
 		}
 
 }

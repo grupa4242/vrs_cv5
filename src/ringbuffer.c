@@ -10,9 +10,9 @@
 
 #define CNTMSK (BUFFLEN - 1)
 
-char buff[BUFFLEN];
-uint16_t rp = 0;
-uint16_t wp = 0;
+volatile char buff[BUFFLEN];
+volatile uint16_t rp = 0;
+volatile uint16_t wp = 0;
 
 char getbuff()
 {

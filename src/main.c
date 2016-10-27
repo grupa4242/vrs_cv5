@@ -85,7 +85,7 @@ int main(void)
 	uint16_t i=10;
   while (1)
   {
-  		if (getfull())
+  		if (!getfull())
   			{
 					if (printmode)
 						{
@@ -101,11 +101,11 @@ int main(void)
 						sprintf(buff, "%d\n\r", adc_conv_val);
 					for (i = 0; i < 10; i++)
 						{
-							if (buff[i] == '0')
+							if (buff[i] == 0)
 								break;
 							putbuff(buff[i]);
 						}
-					USART_SendData(USART1, 'n');
+					USART_ITConfig(USART1, USART_IT_TXE, ENABLE); //I told you so, it could be done more elegantly
 				}
   }
   return 0;
